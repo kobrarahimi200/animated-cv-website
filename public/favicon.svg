@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#1F4D3A"/>
+  <path d="M18 14h26a4 4 0 0 1 4 4v32a4 4 0 0 1-4 4H18z" fill="#F7F1E3"/>
+  <path d="M18 14v40" stroke="#E5846B" stroke-width="4"/>
+  <text x="34" y="38" font-family="Georgia, serif" font-size="16" text-anchor="middle" fill="#1F4D3A">KR</text>
+</svg>
