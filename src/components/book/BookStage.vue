@@ -9,7 +9,9 @@ import { canGoNext, canGoPrev, PAGE_TURN_MS } from '@/book/bookState';
 import { createWheelGesture, type WheelDirection } from '@/book/wheelGesture';
 
 const TURN_COOLDOWN_MS = PAGE_TURN_MS;
-const WHEEL_THRESHOLD = 90;
+/** Shorter than the flip itself so each scroll gesture feels responsive. */
+const WHEEL_COOLDOWN_MS = 750;
+const WHEEL_THRESHOLD = 60;
 const WHEEL_LINE_PX = 16;
 /** The book counts as "in the middle" while its centre sits inside this band of the viewport. */
 const CENTRE_BAND = { min: 0.3, max: 0.7 };
@@ -20,7 +22,7 @@ const isMobile = useMediaQuery(MOBILE_QUERY);
 
 const stage = ref<HTMLElement | null>(null);
 const inView = ref(false);
-const wheelGesture = createWheelGesture({ threshold: WHEEL_THRESHOLD, cooldownMs: TURN_COOLDOWN_MS });
+const wheelGesture = createWheelGesture({ threshold: WHEEL_THRESHOLD, cooldownMs: WHEEL_COOLDOWN_MS });
 let lastTurnAt = 0;
 let observer: IntersectionObserver | null = null;
 let touchStartX: number | null = null;

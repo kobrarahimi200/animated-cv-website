@@ -5,12 +5,14 @@ import MascotHost from '@/components/mascot/MascotHost.vue';
 import QuickScan from '@/components/scan/QuickScan.vue';
 import ProjectShowcase from '@/components/showcase/ProjectShowcase.vue';
 import ConnectSection from '@/components/connect/ConnectSection.vue';
+import PixelField from '@/components/background/PixelField.vue';
 import { portfolio } from '@/content/portfolio';
 
 const { profile } = portfolio;
 </script>
 
 <template>
+  <PixelField />
   <div id="top" class="app">
     <SiteHeader />
 
@@ -44,6 +46,11 @@ const { profile } = portfolio;
 </template>
 
 <style scoped>
+.app {
+  position: relative;
+  z-index: 1;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(200px, 0.8fr);
