@@ -12,7 +12,7 @@ export const portfolio: PortfolioContent = {
     intro:
       'I am a software developer with experience in frontend and backend development. I build enterprise applications with modern web technologies and work closely with agile teams.',
     focus: ['Frontend & backend', 'Enterprise applications', 'Agile teams'],
-    cvHref: '/Kobra_Rahimi_CV.pdf',
+    cvHref: `${import.meta.env.BASE_URL}Kobra_Rahimi_CV.pdf`,
     cvFilename: 'Kobra_Rahimi_CV.pdf',
     contacts: [
       {
@@ -222,7 +222,7 @@ export const portfolio: PortfolioContent = {
       icon: 'tool',
       visual: {
         kind: 'image',
-        src: '/projects/mylo-coding-harness.png',
+        src: `${import.meta.env.BASE_URL}projects/mylo-coding-harness.png`,
         alt: 'Mylo Coding Harness desktop interface showing the plan and diff review workflow',
         width: 1525,
         height: 1031,

@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { portfolio } from '@/content/portfolio';
 import type { ContactLink } from '@/types/portfolio';
+import { MASCOT_IMAGE_SRC } from '@/components/mascot/mascotImage';
 
 const { profile } = portfolio;
 
@@ -77,7 +78,7 @@ function contactIcon(contact: ContactLink): string {
 
       <div class="connect__visual" aria-hidden="true">
         <div class="connect__bubble">Hi, I'm Kobra! Let's talk code.</div>
-        <img class="connect__mascot" src="/mascot/kobra-mascot.png" alt="" width="768" height="768" loading="lazy" />
+        <img class="connect__mascot" :src="MASCOT_IMAGE_SRC" alt="" width="768" height="768" loading="lazy" />
       </div>
     </div>
 

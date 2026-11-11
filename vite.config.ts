@@ -2,7 +2,8 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { fileURLToPath, URL } from 'node:url';
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/animated-cv-website/' : '/',
   plugins: [vue()],
   resolve: {
     alias: {
@@ -17,4 +18,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));

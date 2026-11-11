@@ -31,10 +31,12 @@ const { profile } = portfolio;
 }
 
 .site-header__brand {
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 400;
   color: var(--forest, #2f5d4a);
   text-decoration: none;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.005em;
 }
 
 .site-header__actions {

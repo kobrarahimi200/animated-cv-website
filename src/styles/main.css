@@ -17,6 +17,7 @@
   --radius: 14px;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-serif: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
   --ease-page: cubic-bezier(0.65, 0.05, 0.25, 1);
 }
 
@@ -46,11 +47,12 @@ body {
 h1,
 h2,
 h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
+  font-weight: 400;
   color: var(--forest-deep);
-  line-height: 1.15;
+  line-height: 1.1;
   margin: 0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
 }
 
 p {
