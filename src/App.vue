@@ -6,6 +6,7 @@ import QuickScan from '@/components/scan/QuickScan.vue';
 import ProjectShowcase from '@/components/showcase/ProjectShowcase.vue';
 import ConnectSection from '@/components/connect/ConnectSection.vue';
 import PixelField from '@/components/background/PixelField.vue';
+import CodeRain from '@/components/background/CodeRain.vue';
 import { portfolio } from '@/content/portfolio';
 
 const { profile } = portfolio;
@@ -18,6 +19,7 @@ const { profile } = portfolio;
 
     <main>
       <section class="hero">
+        <CodeRain />
         <div class="hero__copy">
           <p class="eyebrow">{{ profile.location }}</p>
           <h1 class="hero__name">{{ profile.name }}</h1>
@@ -52,6 +54,8 @@ const { profile } = portfolio;
 }
 
 .hero {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(200px, 0.8fr);
   align-items: center;
@@ -59,6 +63,12 @@ const { profile } = portfolio;
   max-width: 1100px;
   margin: 0 auto;
   padding: clamp(2.5rem, 7vw, 5rem) clamp(1rem, 4vw, 3rem) 2rem;
+}
+
+.hero__copy,
+.hero__mascot {
+  position: relative;
+  z-index: 1;
 }
 
 .hero__name {
