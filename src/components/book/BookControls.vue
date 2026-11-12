@@ -3,9 +3,11 @@ import { computed } from 'vue';
 import { useBook } from '@/composables/useBook';
 import { printedPageNumber } from '@/book/bookState';
 import { MOBILE_QUERY, useMediaQuery } from '@/composables/useMediaQuery';
+import { usePageSound } from '@/composables/usePageSound';
 
 const { face, faceCount, currentPage, currentChapter, canNext, canPrev, forward, backward } = useBook();
 const isMobile = useMediaQuery(MOBILE_QUERY);
+const { soundEnabled, toggleSound } = usePageSound();
 
 const pageLabel = computed(() => {
   const number = printedPageNumber(face.value, faceCount);
@@ -48,6 +50,15 @@ function next() {
       @click="next"
     >
       <span aria-hidden="true">&rarr;</span>
+    </button>
+    <button
+      type="button"
+      class="btn btn--icon book-controls__sound"
+      :aria-pressed="soundEnabled"
+      :aria-label="soundEnabled ? 'Mute page turn sound' : 'Unmute page turn sound'"
+      @click="toggleSound"
+    >
+      <span aria-hidden="true">{{ soundEnabled ? '♪' : '✕' }}</span>
     </button>
   </nav>
 </template>

@@ -9,14 +9,19 @@ defineProps<{
   flipped: boolean;
   /** Stacking order: the next leaf to turn must sit on top */
   zIndex: number;
+  /** Y-rotation in degrees while the reader drags this leaf; undefined when not dragged */
+  dragAngle?: number;
 }>();
 </script>
 
 <template>
   <div
     class="leaf"
-    :class="{ 'is-flipped': flipped }"
-    :style="{ zIndex }"
+    :class="{ 'is-flipped': flipped, 'is-dragging': dragAngle !== undefined }"
+    :style="{
+      zIndex,
+      transform: dragAngle !== undefined ? `rotateY(${dragAngle}deg)` : undefined,
+    }"
     :aria-hidden="undefined"
   >
     <div class="leaf__face leaf__face--front">
@@ -43,6 +48,11 @@ defineProps<{
 
 .leaf.is-flipped {
   transform: rotateY(-180deg);
+}
+
+/* While dragged, the leaf follows the pointer directly; the transition resumes on release. */
+.leaf.is-dragging {
+  transition: none;
 }
 
 .leaf__face {

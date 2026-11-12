@@ -11,6 +11,7 @@ import {
   spreadForFace,
 } from '@/book/bookState';
 import type { ChapterId, Chapter, BookPageDef } from '@/types/portfolio';
+import { usePageSound } from '@/composables/usePageSound';
 
 /**
  * Shared navigation state for the single book on the page.
@@ -33,6 +34,8 @@ function firstFaceOfChapter(chapterId: ChapterId): number {
 }
 
 export function useBook() {
+  const { playPageTurn } = usePageSound();
+
   function goToFace(target: number) {
     face.value = clampFace(target, faceCount);
   }
@@ -47,15 +50,22 @@ export function useBook() {
     if (index >= 0) goToFace(index);
   }
 
+  /** Moves to a face as a page turn, playing the page sound only if the face actually changed. */
+  function turnTo(target: number) {
+    const before = face.value;
+    goToFace(target);
+    if (face.value !== before) playPageTurn();
+  }
+
   /** Desktop turns a whole spread (two faces); mobile turns one face at a time. */
   function forward(desktop: boolean) {
     if (!canGoNext(face.value, faceCount)) return;
-    goToFace(desktop ? faceForSpread(spread.value + 1, faceCount) : face.value + 1);
+    turnTo(desktop ? faceForSpread(spread.value + 1, faceCount) : face.value + 1);
   }
 
   function backward(desktop: boolean) {
     if (!canGoPrev(face.value)) return;
-    goToFace(desktop ? faceForSpread(spread.value - 1, faceCount) : face.value - 1);
+    turnTo(desktop ? faceForSpread(spread.value - 1, faceCount) : face.value - 1);
   }
 
   return {
