@@ -12,8 +12,6 @@ export const portfolio: PortfolioContent = {
     intro:
       'I am a software developer with experience in frontend and backend development. I build enterprise applications with modern web technologies and work closely with agile teams.',
     focus: ['Frontend & backend', 'Enterprise applications', 'Agile teams'],
-    cvHref: `${import.meta.env.BASE_URL}Kobra_Rahimi_CV.pdf`,
-    cvFilename: 'Kobra_Rahimi_CV.pdf',
     contacts: [
       {
         label: 'Email',
@@ -65,7 +63,7 @@ export const portfolio: PortfolioContent = {
       id: 'contact',
       numeral: 'V',
       title: 'Contact',
-      summary: 'Get in touch and download my CV',
+      summary: 'Get in touch',
     },
   ],
 

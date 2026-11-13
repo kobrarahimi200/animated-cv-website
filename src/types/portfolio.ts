@@ -21,8 +21,6 @@ export interface Profile {
   location: string;
   intro: string;
   focus: string[];
-  cvHref: string;
-  cvFilename: string;
   contacts: ContactLink[];
 }
 

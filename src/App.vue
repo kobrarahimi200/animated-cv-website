@@ -27,7 +27,6 @@ const { profile } = portfolio;
           <p class="hero__intro">{{ profile.intro }}</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#book">Read the portfolio</a>
-            <a class="btn btn--ghost" :href="profile.cvHref" :download="profile.cvFilename">Download CV</a>
           </div>
         </div>
         <div class="hero__mascot">

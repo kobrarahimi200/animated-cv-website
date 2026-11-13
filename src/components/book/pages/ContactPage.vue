@@ -19,7 +19,7 @@ const CONTACT_ICONS: Record<ContactLink['kind'], IconName> = {
     <p class="eyebrow">Chapter V</p>
     <h2 class="contact__title">Let’s talk</h2>
     <p class="contact__text">
-      Reach me by email, LinkedIn or GitHub, or download the full CV below.
+      Reach me by email, LinkedIn or GitHub.
     </p>
     <ul class="contact__links">
       <li v-for="link in profile.contacts" :key="link.kind">
@@ -32,9 +32,6 @@ const CONTACT_ICONS: Record<ContactLink['kind'], IconName> = {
         </a>
       </li>
     </ul>
-    <a class="btn btn--primary contact__cv" :href="profile.cvHref" :download="profile.cvFilename">
-      Download CV (PDF)
-    </a>
     <button type="button" class="contact__back" @click="goToChapter('about')">Back to About</button>
   </div>
 </template>
@@ -87,11 +84,6 @@ const CONTACT_ICONS: Record<ContactLink['kind'], IconName> = {
   text-transform: uppercase;
   color: var(--teal);
   font-weight: 400;
-}
-
-.contact__cv {
-  align-self: flex-start;
-  margin-top: auto;
 }
 
 .contact__back {

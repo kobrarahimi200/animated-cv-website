@@ -8,7 +8,7 @@ export const mascotLines = {
   ],
   click: [
     'Hello again! Try the arrow keys to turn pages.',
-    'Thanks for stopping by. Want to download the CV?',
+    'Thanks for stopping by. Tip: the menu at the top jumps to any chapter.',
     'Tip: the menu at the top jumps to any chapter.',
   ],
   pages: {

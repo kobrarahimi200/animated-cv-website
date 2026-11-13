@@ -72,7 +72,6 @@ function contactIcon(contact: ContactLink): string {
 
         <div class="connect__actions">
           <a v-if="email" class="btn btn--primary" :href="conversationHref">Start a conversation</a>
-          <a class="btn btn--ghost" :href="profile.cvHref" :download="profile.cvFilename">Download CV</a>
         </div>
       </div>
 

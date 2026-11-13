@@ -10,7 +10,6 @@ const { profile } = portfolio;
     <a class="site-header__brand" href="#top">{{ profile.name }}</a>
     <div class="site-header__actions">
       <QuickNavMenu />
-      <a class="btn btn--primary" :href="profile.cvHref" :download="profile.cvFilename">Download CV</a>
     </div>
   </header>
 </template>
